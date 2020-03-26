@@ -1,0 +1,169 @@
+.header {
+  position: relative;
+}
+.navbar-header {
+  background: transparent;
+  height: 65px;
+}
+.navbar-inverse {
+  background: transparent;
+  border: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  z-index: 999;
+  border-radius: 0;
+  .navbar-toggle {
+    float: #{$direction-reverse};
+    position: relative;
+    color: $white !important;
+    background: transparent;
+    border: 0;
+    margin-#{$direction-reverse}: 20px;
+    @include transition();
+    .icon-bar {
+      background-color: $black;
+    }
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      .icon-bar {
+        background: $black;
+      }
+    }
+  }
+  .navbar-collapse {
+    @media #{$max-mobile} {
+      .navbar-nav {
+        position: relative;
+        background-color: $white;
+        border-color: transparent;
+      }
+    }
+  }
+  .navbar-brand {
+    padding-top: 10px;
+    float: #{$direction};
+  }
+
+  .navbar-nav {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @media #{$max-mobile} {
+      position: relative;
+    }
+    li a {
+      color: $main;
+      font-size: 1.3rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      @include transition();
+      &:hover,
+      &:focus {
+        color: $theme-color;
+      }
+      @media #{$max-medium} {
+        font-size: 0.7em;
+      }
+    }
+    .btn-primary {
+      margin-left: 10px;
+      color: $main;
+      background: transparent;
+      border: 1px solid $main;
+      padding: 10px 20px;
+      border-radius: 25px;
+      letter-spacing: 0;
+      border-top-left-radius: 0px;
+      &:hover,
+      &:focus {
+        color: $white;
+        background-color: $main;
+      }
+    }
+    .btn-danger {
+      padding: 10px 20px;
+      color: $white;
+      &:hover,
+      &:focus {
+        background-color: darken($theme-color, 5%);
+      }
+    }
+
+    .active a {
+      background-color: transparent;
+      color: $theme-color;
+      &:active,
+      &:focus,
+      &:hover {
+        background-color: transparent;
+        color: $theme-color;
+      }
+    }
+  }
+}
+.affix {
+  width: 100%;
+  background-color: $white;
+  @include shadow(0px, 5px, 25px, -10px, rgba($black, 0.3));
+  padding-top: 10px;
+  .navbar-nav li a {
+  }
+}
+
+#side-menu {
+  background-color: $white;
+  width: 100%;
+  .contents {
+    margin-top: 50px;
+    li {
+      margin-bottom: 20px;
+
+      &:hover,
+      &:focus {
+        a {
+          color: $theme-color;
+          background: transparent;
+        }
+      }
+      a {
+        color: $main;
+      }
+    }
+  }
+  .btn-primary {
+    background-color: lighten($theme-color, 40%);
+    color: $theme-color !important;
+    border-top-left-radius: 0;
+    &:hover,
+    &:focus {
+      background-color: $main;
+      color: $white !important;
+    }
+  }
+  .btn-danger {
+    &:hover,
+    &:focus {
+      color: $theme-color !important;
+    }
+  }
+}
+
+.avatar {
+  img {
+    height: 80px;
+    width: 80px;
+  }
+  @media #{$min-mobile} {
+    display: none;
+  }
+}
+
+.mobile {
+  @media #{$min-mobile} {
+    display: none !important;
+  }
+  @media #{$max-mobile} {
+    display: block;
+  }
+}

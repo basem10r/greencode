@@ -1,0 +1,16 @@
+.table 
+{
+	@include shadow(0px,10px,35px,-10px,$gray);
+	border-radius: 25px;
+	margin-top: 50px;
+}
+.table-container 
+{
+	overflow-x: auto;
+	padding-right:20px;
+	padding-left:20px;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th
+{
+	padding: 20px;
+}

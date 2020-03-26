@@ -1,0 +1,355 @@
+.aboutus {
+  .aboutus-info {
+    max-width: 400px;
+    h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      @media #{$max-mobile} {
+        font-size: 3rem;
+      }
+    }
+    p {
+      color: $gray;
+      line-height: 2.5rem;
+      span {
+        color: $main;
+        font-weight: bold;
+      }
+    }
+    @media #{$max-mobile} {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+}
+
+// start styling services section
+// ******************************
+
+.services {
+  h1 {
+    font-weight: bold;
+    @media #{$max-mobile} {
+      font-size: 3rem;
+    }
+  }
+  .section-content {
+    margin-top: 50px;
+  }
+  .items-#{$direction},
+  .items-#{$direction-reverse} {
+    @for $i from 1 through 6 {
+      .item#{$i} {
+        margin-bottom: 20px;
+        max-width: 300px;
+        @include shadow(0px, 5px, 25px, -15px, rgba(black, 0.2));
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 35px;
+        .item-icon,
+        .item-desc {
+          float: $direction-reverse;
+        }
+        .item-icon {
+          height: 50px;
+          width: 50px;
+          line-height: 50px;
+          border-radius: 50%;
+          text-align: center;
+          background-color: lighten($theme-color, 40%);
+          border-top-#{$direction}-radius: 0px;
+          @media #{$max-medium} and #{$min-mobile} {
+            height: 30px;
+            width: 30px;
+            line-height: 30px;
+            i {
+              font-size: 0.6rem;
+            }
+          }
+
+          i {
+            font-size: 1.8rem;
+            color: $white;
+            color: $theme-color;
+          }
+        }
+        .item-desc {
+          display: flex;
+          align-items: center;
+          max-width: 180px;
+          text-align: $direction-reverse;
+          margin-#{$direction-reverse}: 10px;
+          a {
+            text-decoration: none;
+          }
+          a > h4 {
+            color: $main;
+            font-size: 1.3rem;
+            @media #{$max-medium} and #{$min-mobile} {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .items-#{$direction-reverse} {
+    @for $i from 1 through 6 {
+      .item#{$i} {
+        .item-icon,
+        .item-desc {
+          max-width: 180px;
+          float: $direction;
+        }
+        .item-icon {
+          border-top-#{$direction}-radius: 50%;
+          border-top-#{$direction-reverse}-radius: 0px;
+        }
+        .item-desc {
+          margin-#{$direction}: 10px;
+          margin-#{$direction-reverse}: 0px;
+          text-align: $direction;
+        }
+      }
+    }
+  }
+
+  .img-container {
+    margin-bottom: 20px;
+    .circle {
+      animation: rotation 8s infinite linear;
+      @media #{$max-mobile} {
+        width: 200px;
+        position: relative;
+        top: 10px;
+      }
+    }
+    .logo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto auto;
+      height: 150px;
+      width: 150px;
+      line-height: 150px;
+      background: $main;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      @media #{$max-mobile} {
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+        img {
+          width: 25px;
+        }
+      }
+
+      img {
+        width: 100px;
+      }
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+// styling testimonials sections
+.testimonial {
+  background: url(../img/testimonials.png) no-repeat;
+  background-size: cover;
+  background-position: 50% 0%;
+  h1 {
+    margin-top: 80px;
+    font-size: 4em;
+    font-weight: bold;
+    @media #{$max-mobile} {
+      font-size: 3rem;
+    }
+
+    @media #{$max-mobile} {
+      font-size: 2em;
+      text-align: center;
+    }
+  }
+
+  .owl-carousel .owl-stage-outer {
+    // width: 990px;
+
+    @media (max-width: 1000px) {
+      width: 100%;
+    }
+  }
+
+  .owl-nav {
+    position: absolute;
+    bottom: -50px;
+    #{$direction}: 50px;
+
+    @media #{$max-mobile} {
+      position: relative;
+      top: 0;
+      #{$direction}: 0;
+    }
+
+    button {
+      height: 50px;
+      width: 50px;
+      border-radius: 50% !important;
+      line-height: 50px;
+      background: $theme-color !important;
+
+      span {
+        font-size: 2.5em;
+        color: $main;
+      }
+
+      &:hover,
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+
+      @media #{$max-mobile} {
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+
+        span {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
+
+.testimonial .item {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 50px;
+}
+
+.testimonial .card {
+  position: relative;
+  margin-bottom: 50px;
+  background-color: $white;
+  margin-#{$direction}: 0;
+  padding: 50px 20px 20px 20px;
+  @include shadow(0px, 10px, 25px, -10px, rgba(#000, 0.2));
+  p {
+    color: $gray;
+  }
+  span {
+    color: $theme-color;
+  }
+  &:hover {
+    .img-container {
+      &:after {
+        @include rotateZ(30deg);
+      }
+    }
+  }
+}
+
+.testimonial .card .img-container {
+  height: 70px;
+  position: relative;
+  width: 70px;
+  margin: auto;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: block;
+    z-index: 1;
+    width: 100%;
+    background: $theme-color;
+    border-radius: 15px;
+    @include transition();
+  }
+  img {
+    border-radius: 15px;
+    position: relative;
+    z-index: 2;
+    height: 70px;
+    width: 70px;
+  }
+
+  //   @include shadow(0px, 10px, 25px, -5px, #000);
+}
+
+.testimonial .icon2 {
+  margin-top: 10px;
+  color: $theme-color;
+  cursor: pointer;
+}
+
+.testimonial .punctuation {
+  background-color: lighten($theme-color, 40%);
+  height: 50px;
+  margin: 10px auto;
+  width: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  border-top-#{$direction}-radius: 0px;
+  i {
+    color: $theme-color;
+  }
+}
+
+// start styling contactus section
+.contactus {
+  h1 {
+    font-weight: bold;
+    @media #{$max-mobile} {
+      font-size: 3rem;
+    }
+  }
+  .section-content {
+    .card {
+      padding: 20px;
+      text-align: center;
+      height: 230px;
+      @include transition();
+      &:hover {
+        @include shadow(0px, 0px, 35px, -5px, rgba($black, 0.2));
+        border-radius: 35px;
+        border-top-left-radius: 0px;
+      }
+
+      .icon {
+        background-color: lighten($theme-color, 40%);
+        height: 70px;
+        width: 70px;
+        line-height: 70px;
+        border-radius: 50%;
+        border-top-left-radius: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        i {
+          font-size: 1.8rem;
+          color: $theme-color;
+        }
+        .card-desc {
+          p {
+            color: $gray;
+          }
+        }
+      }
+    }
+  }
+}

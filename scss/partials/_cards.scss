@@ -1,0 +1,20 @@
+.card1 {
+  text-align: center;
+  h3 {
+    font-weight: bold;
+    margin-top: 0;
+  }
+}
+.card2 {
+  border-radius: 25px;
+  height: 200px;
+  width: 200px;
+  background: url("../img/abstract.png");
+  background-position: 50% 80%;
+  background-size: 200px 200px;
+  display: inline-block;
+  vertical-align: middle;
+  img {
+    margin-top: 40%;
+  }
+}

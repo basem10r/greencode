@@ -1,0 +1,20 @@
+.form-group {
+  .control-label {
+    margin-right: 10px;
+  }
+  .form-control {
+    border-radius: 25px;
+  }
+  textarea {
+    height: 220px;
+  }
+}
+.form-control {
+  border: 0;
+  @include shadow(0px, 5px, 35px, -5px, rgba($black, 0.2));
+  margin-bottom: 30px;
+}
+textarea.form-control {
+  height: 200px;
+  border-radius: 25px;
+}

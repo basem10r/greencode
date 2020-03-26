@@ -1,0 +1,52 @@
+.breadcrumb {
+  background: url(../img/breadcrumb.png) no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  text-align: center;
+  padding-top: 80px;
+  position: relative;
+  height: 350px;
+  h1 {
+    font-weight: bold;
+    @media #{$max-mobile} {
+      font-size: 3rem;
+    }
+  }
+  ul {
+    margin-top: 50px;
+    li {
+      display: inline-block;
+      margin-left: 10px;
+      margin-right: 10px;
+      @media #{$max-mobile} {
+        margin-bottom: 20px;
+      }
+      a {
+        @include transition();
+        font-size: 1.5em;
+        color: $main;
+        font-weight: bold;
+        letter-spacing: 5px;
+        @media #{$max-mobile} {
+          font-size: 1.2rem;
+        }
+        text-decoration: none;
+        &:hover,
+        &:focus {
+          color: $theme-color;
+        }
+      }
+      &:not(:last-child):after {
+        content: "|";
+        color: $main;
+        font-weight: bold;
+        margin-#{$direction}: 15px;
+      }
+      &.active {
+        a {
+          color: $theme-color;
+        }
+      }
+    }
+  }
+}

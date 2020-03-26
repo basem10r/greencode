@@ -1,0 +1,72 @@
+.service-about,
+.service-imp {
+  p {
+    line-height: 3rem;
+  }
+  .img-container {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      height: 150px;
+      width: 150px;
+      z-index: -1;
+      top: -20px;
+      border-radius: 50px;
+      border-top-left-radius: 0px;
+      #{$direction-reverse}: 0;
+      background-color: $theme-color;
+    }
+    img {
+      width: 500px;
+      border-radius: 100px;
+      border-top-left-radius: 0px;
+    }
+  }
+}
+
+// start styling service tools section
+.service-tools {
+  .tools {
+    margin-top: 20px;
+    .tools-labels {
+      padding-#{$direction}: 0;
+      li {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 25px;
+        border-top-left-radius: 0;
+        background-color: $white;
+        margin-bottom: 20px;
+        cursor: pointer;
+        margin-#{$direction-reverse}: 20px;
+        @include shadow(0px, 5px, 25px, -10px, rgba($black, 0.2));
+        @include transition();
+        &:hover {
+          background-color: $theme-color;
+          color: $black;
+        }
+      }
+    }
+  }
+  .img-container {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      height: 150px;
+      width: 150px;
+      z-index: -1;
+      top: -20px;
+      border-radius: 50px;
+      border-top-left-radius: 0px;
+      #{$direction-reverse}: 0;
+      background-color: $theme-color;
+    }
+    img {
+      width: 500px;
+      border-radius: 100px;
+      border-top-left-radius: 0px;
+    }
+  }
+}
