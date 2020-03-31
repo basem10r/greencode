@@ -9,7 +9,24 @@ body {
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
 }
+.abstract,
+.abstract1 {
+  position: absolute;
+  top: -100px;
+  width: 650px;
+  @media #{$max-mobile} {
+    width: 200px;
+    top: 0;
+  }
+}
 
+.abstract {
+  right: 0;
+}
+
+.abstract1 {
+  left: 0;
+}
 .content {
   background: $white;
 }

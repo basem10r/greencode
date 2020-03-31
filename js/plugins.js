@@ -1,15 +1,15 @@
-$(document).ready(function() {
-  $(window).on("load", function() {
-    $(".loader-section .lds-grid").fadeOut(2000, function() {
-      $(this)
-        .parent()
-        .fadeOut(2000, function() {
-          $("body").css("overflow", "auto");
-          $(this).remove();
-        });
-    });
+$(window).on("load", function() {
+  $(".loader-section .lds-grid").fadeOut(2000, function() {
+    $(this)
+      .parent()
+      .fadeOut(2000, function() {
+        $("body").css("overflow", "auto");
+        $(this).remove();
+      });
   });
+});
 
+$(document).ready(function() {
   var owl = $("#owl1");
 
   owl.owlCarousel({
@@ -78,4 +78,29 @@ $(document).ready(function() {
     }
     // itemsMobile disabled - inherit from itemsTablet option
   });
+
+  // $("#dropdown1").hover(
+  //   function() {
+  //     $(".dropdown1-menu").show();
+  //   },
+  //   function() {
+  //     $(".dropdown1-menu").hide();
+  //   }
+  // );
+  $(".dropdown").hover(
+    function() {
+      $(".dropdown-menu", this)
+        .not(".in .dropdown-menu")
+        .stop(true, true)
+        .slideDown("400");
+      $(this).toggleClass("open");
+    },
+    function() {
+      $(".dropdown-menu", this)
+        .not(".in .dropdown-menu")
+        .stop(true, true)
+        .slideUp("400");
+      $(this).toggleClass("open");
+    }
+  );
 });
